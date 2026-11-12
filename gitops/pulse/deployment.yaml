@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: pulse-gitops
-  namespace: pulse-lab
+  namespace: abul-pulse
 spec:
   replicas: 2
   selector:
