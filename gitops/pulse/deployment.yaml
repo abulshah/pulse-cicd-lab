@@ -1,18 +1,17 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pulse-gitops
+  name: abul-pulse-gitops
   namespace: abul-pulse
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: pulse-gitops
+      app: abul-pulse-gitops
   template:
     metadata:
       labels:
-        app: pulse-gitops
+        app: abul-pulse-gitops
     spec:
       containers:
         - name: pulse-api
@@ -28,12 +27,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: pulse-gitops-svc
-  namespace: pulse-lab
+  name: abul-pulse-gitops-svc
+  namespace: abul-pulse
 spec:
   type: ClusterIP
   selector:
-    app: pulse-gitops
+    app: abul-pulse-gitops
   ports:
     - port: 8000
       targetPort: 8000
